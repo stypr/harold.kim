@@ -5,6 +5,7 @@
       <router-link to="/about">About</router-link><br>
       <router-link to="/blog">Blog</router-link><br>
       <router-link to="/donate">Donate</router-link><br>
+      <router-link to="/service">Services</router-link><br>
       <router-link to="/contact">Contact</router-link>
     </div>
   </div>
@@ -21,12 +22,12 @@
       <SpotLight color="#00fc00" :intensity="0.3" :position="{ y: 150, z: 0 }" :cast-shadow="true" :shadow-map-size="{ width: 1024, height: 1024 }" />
       <SpotLight color="#00fe00" :intensity="0.5" :position="{ y: -150, z: 0 }" :cast-shadow="true" :shadow-map-size="{ width: 1024, height: 1024 }" />
       <InstancedMesh ref="imesh" :count="NUM_INSTANCES" :cast-shadow="true" :receive-shadow="true">
-        <SphereGeometry :radius="3" />
+        <BoxGeometry :width="3" :height="3" :depth="3" />
         <PhongMaterial />
       </InstancedMesh>
       <Text
         text="stypr"
-        font-src="https://unpkg.com/three@0.77.0/examples/fonts/helvetiker_bold.typeface.json"
+        font-src="/font.json"
         align="center"
         :size="20"
         :height="5"
@@ -202,7 +203,6 @@
     PhongMaterial,
     Renderer,
     RenderPass,
-    SphereGeometry,
     SpotLight,
     Scene,
     Text,
@@ -216,7 +216,6 @@
       PhongMaterial,
       Renderer,
       RenderPass,
-      SphereGeometry,
       SpotLight,
       Scene,
       Text,
@@ -224,8 +223,8 @@
     },
     setup() {
       return {
-        GIT_HASH: process.env.VUE_APP_GIT_HASH,
-        NUM_INSTANCES: 500,
+        NUM_INSTANCES: 1000,
+        GIT_HASH: VUE_APP_GIT_HASH[0],
       };
     },
     mounted() {
@@ -248,6 +247,17 @@
       },
     },
     updated() {
+      const camera = this.$refs.camera;
+      /*
+      if(renderer.renderer){
+        renderer.renderer.setSize(window.innerWidth, window.innerHeight);
+      } // .resize("window"));
+      */
+      if(camera.camera){
+        camera.camera.position.x = 0;
+        camera.camera.position.y = 0;
+        camera.camera.position.z = 100;
+      }
       const el = this.$refs.container;
       if (el) {
         el.scrollIntoView({behavior: 'smooth'});

@@ -1,5 +1,8 @@
 ---
 name: Contact
+meta:
+  - name: description
+    content: Hello World
 ---
 
 # &#128222; Contact

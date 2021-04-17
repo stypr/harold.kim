@@ -1,3 +1,7 @@
+---
+name: 404 Not Found
+---
+
 # &#129327; 404 Not Found
 
 The page you're looking for is deleted or moved.

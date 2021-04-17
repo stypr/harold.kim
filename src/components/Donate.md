@@ -18,28 +18,28 @@ name: Donation is &hearts;
 
 ## &#128583; Big Thanks
 
-### Amazon Gift
+### Gift
 
 | | | |
 | --- | --- | --- |
 | <img src=../assets/profile/udon.jpg width=100> | &emsp; | @udon ([Twitter](https://twitter.com/_sumisaka))<br><ul><li>Green Label</li><li>Switch ProCon</li></ul>|
 | <img src=../assets/profile/tomoaxe.jpg width=100> | &emsp; | Nakamura Tomofumi ([Twitter](https://twitter.com/tomoaxe))<br><ul><li>Camping Chair</li><br></ul>|
 
-### PayPal
+### Cash
 | | | |
 | --- | --- | --- |
-| <img src=../assets/profile/initbar.png width=100> | &emsp; | Herbert Shin &middot; initbar ([Website](https://init.bar/))<br>$80.86<br><br><br><br>|
-| <img src=../assets/profile/kazet.jpg width=100> | &emsp; | Krzysztof Zając &middot; kazet ([Website](https://init.bar/))<br>$30.00<br><br><br><br>|
-| <img src=../assets/profile/jinmo123.jpg width=100> | &emsp; | Yonghwi Jin &middot; jinmo123 ([Facebook](https://facebook.com/jinyonghwi/))<br>$20.86<br><br><br><br>|
-| <img src=../assets/profile/cothan.jpg width=100> | &emsp; | Cothan Duc Nguyen &middot; cothan ([Twitter](https://twitter.com/c0th4n))<br>$13.37<br><br><br><br>|
-| <img src=../assets/profile/hertz.jpg width=100> | &emsp; | Bugarin Nicolae Daniel &middot; Hertz ([Twitter](https://twitter.com/Hertz_))<br>$13.37<br><br><br><br>|
-| <img src=../assets/profile/gnxbr.jfif width=100> | &emsp; | Álisson Bertochi &middot; gnxbr ([Epic Leet Team](https://epicleet.team/))<br>$10.00<br><br><br><br>|
-| <img src=../assets/profile/jidoc.jpg width=100> | &emsp; | Junghyun Kim ([Website](https://jidoc.me))<br>$10.00<br><br><br><br>|
-| <img src=../assets/profile/gnxbr.jfif width=100> | &emsp; | Posix ([Twitter](https://twiter.com/po6ix))<br>$10.00<br><br><br><br>|
-| <img src=../assets/profile/isopach.jfif width=100> | &emsp; | Koh You Liang &middot; isopach ([Twitter](https://twitter.com/kohyouliang))<br>$10.00<br><br><br><br>|
+| <img src=../assets/profile/initbar.png width=100> | &emsp; | Herbert Shin &middot; initbar ([Website](https://init.bar/))<br><ul><li>$80.86</li><li>via PayPal</li></ul> |
+| <img src=../assets/profile/kazet.jpg width=100> | &emsp; | Krzysztof Zając &middot; kazet ([Website](https://init.bar/))<br><ul><li>$30.00</li><li>via PayPal</li></ul> |
+| <img src=../assets/profile/jinmo123.jpg width=100> | &emsp; | Yonghwi Jin &middot; jinmo123 ([Facebook](https://facebook.com/jinyonghwi/))<br><ul><li>$20.86</li><li>via PayPal</li></ul> |
+| <img src=../assets/profile/cothan.jpg width=100> | &emsp; | Cothan Duc Nguyen &middot; cothan ([Twitter](https://twitter.com/c0th4n))<br><ul><li>$13.37</li><li>via PayPal</li></ul> |
+| <img src=../assets/profile/hertz.jpg width=100> | &emsp; | Bugarin Nicolae Daniel &middot; Hertz ([Twitter](https://twitter.com/Hertz_))<br><ul><li>$13.37</li><li>via PayPal</li></ul> |
+| <img src=../assets/profile/gnxbr.jpg width=100> | &emsp; | Álisson Bertochi &middot; gnxbr ([Epic Leet Team](https://epicleet.team/))<br><ul><li>$10.00</li><li>via PayPal</li></ul> |
+| <img src=../assets/profile/jidoc.jpg width=100> | &emsp; | Junghyun Kim ([Website](https://jidoc.me))<br><ul><li>$10.00</li><li>via PayPal</li></ul> |
+| <img src=../assets/profile/posix.jpg width=100> | &emsp; | Posix ([Twitter](https://twiter.com/po6ix))<br><ul><li>$10.00</li><li>via PayPal</li></ul> |
+| <img src=../assets/profile/isopach.jpg width=100> | &emsp; | Koh You Liang &middot; isopach ([Twitter](https://twitter.com/kohyouliang))<br><ul><li>$10.00</li><li>via PayPal</li></ul> |
 
-### Bitcoin
+### Cryptocurrencies
 
 | | | |
 | --- | --- | --- |
-| <img src=../assets/profile/anonymous.png width=100> | &emsp; | Anonymous<br>0.16043600 BTC<br><br><br><br> |
+| <img src=../assets/profile/anonymous.png width=100> | &emsp; | Anonymous<br><ul><li>0.16043600 BTC</li><li>via Bitcoin</li></ul>  |

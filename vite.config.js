@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import Markdown from 'vite-plugin-md';
 
 const {gitDescribe, gitDescribeSync} = require('git-describe');
-process.env.VUE_APP_GIT_HASH = gitDescribeSync().hash;
+VUE_APP_GIT_HASH = [gitDescribeSync().hash];
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,9 +11,11 @@ export default defineConfig({
     vue({
       include: [/\.vue$/, /\.md$/],
     }),
-    Markdown()
+    Markdown({
+      headEnabled: true,
+    })
   ],
   define: {
-    'process.env': process.env
+    'VUE_APP_GIT_HASH': VUE_APP_GIT_HASH
   }
 });

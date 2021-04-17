@@ -14,28 +14,33 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
+    path: '/blog/',
+    name: 'Blog',
+    component: () => import(/* webpackChunkName: "blog" */ '../views/Blog.vue')
+  },
+  {
     path: '/donate/',
     name: 'Donate',
     component: () => import(/* webpackChunkName: "donate" */ '../views/Donate.vue')
   },
   {
     path: '/contact/',
-    name: 'contact',
+    name: 'Contact',
     component: () => import(/* webpackChunkName: "memo" */ '../views/Contact.vue')
   },
   {
-    path: '/blog/',
-    name: 'Blog',
-    component: () => import(/* webpackChunkName: "blog" */ '../views/Blog.vue')
+    path: '/service/',
+    name: 'Service',
+    component: () => import(/* webpackChunkName: "blog" */ '../views/Service.vue')
   },
   {
     path: '/:pathMatch(.*)*',
-    component: NotFound
+    component: () => import(/* webpackChunkName: "notfound" */ '../views/NotFound.vue')
   },
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes
 })
 
