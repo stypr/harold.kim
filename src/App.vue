@@ -8,7 +8,11 @@
       <router-link to="/contact">Contact</router-link>
     </div>
   </div>
-  <div class="container" v-if="isPath">
+  <div class="menu-bottom" style="letter-spacing: 0.1em; text-transform:none; text-align:center;">
+    <a href="//github.com/stypr/harold.kim">Made with &hearts;</a><br>
+    <small>commit: {{GIT_HASH}}</small>
+  </div>
+  <div class="container" ref="container" v-if="isPath">
     <router-view/>
   </div>
   <Renderer ref="renderer" antialias resize="window" :orbit-ctrl="{ enableDamping: true, dampingFactor: 0.5, autoRotate: true , enabled: false }" shadow>
@@ -39,42 +43,35 @@
   </Renderer>
 </template>
 <style>
-  html,body {
+  html, body {
     background:transparent;
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
     font-family: Lato, 'Noto Sans KR', snas-serif;
   }
-  canvas {
-  }
+
   body {
+    padding:0;
     margin: 0;
     overflow: hidden;
   }
 
+  canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: -1 !important;
+  }
+  
   #app {
     background: #000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-  }
-
-  #nav {
-    padding: 30px;
-  }
-
-  #nav a {
-    font-weight: bold;
-    color: #fff;
-    line-height: 1.8em;
-    text-decoration: none; 
-  }
-
-  #nav a.router-link-exact-active {
-    color: #42b983;
   }
 
   .menu-left {
@@ -91,6 +88,35 @@
     font-size: 1.2rem;
   }
 
+  .menu-left > #nav {
+    padding: 30px;
+  }
+
+  .menu-left > #nav a {
+    font-weight: bold;
+    color: #fff;
+    line-height: 1.8em;
+    text-decoration: none; 
+  }
+
+  .menu-left > #nav a.router-link-exact-active {
+    color: #42b983;
+  }
+
+  .menu-bottom {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: Lato;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: .6rem;
+    background-color: #000000cc;
+    color: #fff;
+    text-align: left;
+    font-size: 1rem;
+  }
+
   #app > .container {
     position:fixed;
     left: 190px;
@@ -104,10 +130,11 @@
     overflow-y: auto;
   }
 
-  #app > .container a {
+  #app > .container a, .menu-bottom a {
     color: #fff;
   }
-  #app > .container a:hover {
+
+  #app > .container a:hover, .menu-bottom a:hover {
     color: #fee;
      text-shadow: 0 0 10px #70f030;
   }
@@ -115,32 +142,54 @@
   .block {
     display: none;
   }
+  .padded {
+    padding: 30px;
+  }
+
   @media(max-width:800px){
-    #app > .container {
-      left: 0px;
-      top: 105px;
-      width: 100%;
-      height: calc(100% - 105px);
-    }
     body{
+      overflow-y:scroll;
       margin-left:0;
-      margin-right:0
+      margin-right:0;
+    }
+    #app {
+      width: 100%;
+      height: 100%;
+      background:transparent;
+    }
+    #app > .container {
+      position: relative;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      min-height: 100%;
+      height: auto;
     }
     .menu-left {
+      background:#000000cc;
+      position: relative;
+      min-height: 100%;
       width: 100%;
+      padding: 0;
+      margin: 0;
     }
     .menu-left #nav {
-      padding: 30px 0px;
+      background: transparent;
+      margin: 0 auto;
+      position: absolute;
+      z-index: 1!important;
+      width: 100%;
+      height: 50%;
       text-align: center;
+      padding: 0;
+      top: 50%;
+      margin-top: -10rem;
     }
     .menu-left #nav a{
-      font-size: 0.9rem;
-      padding: 0 8px;
+      font-size: 2rem;
     }
     .menu-left #nav br{
-      display: none;
     }
-    
   }
 </style>
 <script>
@@ -175,6 +224,7 @@
     },
     setup() {
       return {
+        GIT_HASH: process.env.VUE_APP_GIT_HASH,
         NUM_INSTANCES: 500,
       };
     },
@@ -195,6 +245,12 @@
     computed: {
       isPath() {
         return this.$route.name !== 'Home'
+      },
+    },
+    updated() {
+      const el = this.$refs.container;
+      if (el) {
+        el.scrollIntoView({behavior: 'smooth'});
       }
     },
   };

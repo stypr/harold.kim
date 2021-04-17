@@ -1,12 +1,17 @@
 <template>
-  <div class="contact">
-    Todo..
+  <div class="contact padded">
+    <ContactMarkdown />
   </div>
 </template>
 <script>
-  export default {
-    name: 'Contact',
-    components: {
-    }
+import ContactMarkdown from '/src/components/Contact.md'
+
+export default {
+  setup() {
+    return {};
+  },
+  components: {
+      ContactMarkdown,
   }
+}
 </script>

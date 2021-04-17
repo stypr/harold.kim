@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [  
   {
@@ -26,7 +27,11 @@ const routes = [
     path: '/blog/',
     name: 'Blog',
     component: () => import(/* webpackChunkName: "blog" */ '../views/Blog.vue')
-  }
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: NotFound
+  },
 ]
 
 const router = createRouter({

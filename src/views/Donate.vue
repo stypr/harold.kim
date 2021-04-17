@@ -1,19 +1,18 @@
 <template>
-    <div class="donate" style="padding: 30px;">
-        <DonateList />
+    <div class="donate padded">
+        <DonateMarkdown />
     </div>
 </template>
 <script>
-import DonateList from '/src/components/DonateList.md'
+import DonateMarkdown from '/src/components/Donate.md'
 
 export default {
   setup() {
     return {
-      content: '">',
     };
   },
   components: {
-      DonateList,
+      DonateMarkdown,
   }
 }
 </script>
