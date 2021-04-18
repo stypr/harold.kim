@@ -42,6 +42,7 @@ export default {
     };
   },
   mounted() {
+    document.title = 'harold.kim » Blog';
     this.getPosts();
     this.getGists();
   },

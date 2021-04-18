@@ -1,7 +1,6 @@
 # harold.kim
 
-harold.kim on Vue
-design by stypr.
+harold.kim on Vue, design by stypr.
 
 ## Setup
 

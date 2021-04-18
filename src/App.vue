@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link><br />
       <router-link to="/about">About</router-link><br />
-      <router-link to="/blog">Blog</router-link><br />
+      <router-link to="/blog" v-bind:class="($route.path.indexOf('/blog/') === 0) ? 'router-link-exact-active': ''">Blog</router-link><br />
       <router-link to="/donate">Donate</router-link><br />
       <router-link to="/project">Project</router-link><br />
       <router-link to="/contact">Contact</router-link>
@@ -191,11 +191,13 @@ canvas {
     margin-left: 0;
     margin-right: 0;
   }
+
   #app {
     width: 100%;
     height: 100%;
     background: transparent;
   }
+
   #app > .container {
     position: relative;
     left: 0px;
@@ -204,6 +206,7 @@ canvas {
     min-height: 100%;
     height: auto;
   }
+
   .menu-left {
     background: #000000cc;
     position: relative;
@@ -212,6 +215,7 @@ canvas {
     padding: 0;
     margin: 0;
   }
+
   .menu-left #nav {
     background: transparent;
     margin: 0 auto;
@@ -224,6 +228,7 @@ canvas {
     top: 50%;
     margin-top: -10rem;
   }
+
   .menu-left #nav a {
     font-size: 2rem;
   }
@@ -239,6 +244,7 @@ canvas {
   font-weight: bold;
   margin-right: 3px;
 }
+
 .category {
   color: #000;
   font-size: 10pt;
@@ -255,16 +261,19 @@ canvas {
   padding-top: 20px;
   font-size: 20px;
 }
+
 pre,
 code {
   font-family: "Ubuntu Mono", monospace;
   line-height: 1.1em;
 }
+
 code a,
 code a span,
 code span {
   color: #000 !important;
 }
+
 code {
   word-break:break-all;
   word-wrap:break-word;
@@ -272,12 +281,14 @@ code {
   padding: 1px 2px;
   color: #000;
 }
+
 pre {
   white-space: pre-wrap;
   background: #eee;
   padding: 20px;
   color: #000;
 }
+
 blockquote {
   background: #666;
   padding: 20px;
@@ -347,7 +358,9 @@ export default {
     },
   },
   updated() {
-    document.title = "harold.kim";
+    if (!this.isPath) {
+      document.title = 'harold.kim';
+    }
     const camera = this.$refs.camera;
     if (camera.camera) {
       camera.camera.position.x = 0;

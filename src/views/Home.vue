@@ -5,5 +5,7 @@
 export default {
   name: "Home",
   components: {},
+  mounted() {
+  }
 };
 </script>

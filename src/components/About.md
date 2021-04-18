@@ -10,9 +10,14 @@ title: harold.kim » About
 
 Currently working as a security engineer in Japan.
 
----
 
 <br>
+
+### &#128064; Affiliated with
+
+* &#128188; [Flatt Security Inc.](//flatt.tech)
+* &#128300; [HypwnLab](//hypwnlab.com)
+* &#128681; [r3kapig](//r3kapig.com)
 
 ### &#128030; Disclosed vulnerabilities
 
@@ -40,6 +45,7 @@ Currently working as a security engineer in Japan.
 * KVE-2018-0513
 * KVE-2018-0438
 * KVE-2018-0436
+* ...
 
 ### &#128681; CTF
 
@@ -50,8 +56,8 @@ Currently working as a security engineer in Japan.
 * <b>2020</b> &#127941; DEFCON 28 CTF
 * <b>2020</b> &#129351; InterKosen CTF
 * <b>2019</b> &#129351; Hack&#46;lu CTF
-* <b>2019</b> &#129351; RCTF 2019	China
-* <b>2019</b> &#129351; *CTF 2019	China
+* <b>2019</b> &#129351; RCTF 2019
+* <b>2019</b> &#129351; *CTF 2019
 * <b>2019</b> &#129351; Harekaze CTF
 * <b>2019</b> &#129351; 0CTF/TCTF 2019
 * <b>2019</b> &#127941; DEFCON 27 CTF
