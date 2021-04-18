@@ -7,7 +7,7 @@
         </span>
         <li v-for="post in sortedPosts" :key="post.dates" >
           <b>{{ post.created_at }}</b> {{ post.category }} {{ post.tag }}<br>
-          <a :href="post.title">{{ post.title }}</a><br><br>
+          <router-link :to="post.path.substring(0)">{{ post.title }}</router-link><br><br>
         </li>
       </ul>
       <h1>&#128210; Gists</h1>
@@ -26,6 +26,7 @@
   </div>
 </template>
 <script type="module">
+
 export default {
   setup() {
     return {};
@@ -44,22 +45,9 @@ export default {
   },
   methods: {
     getPosts() {
-      // stuck on axios to receive md path dynamically on prod, todo
-      const posts = Object.keys(import.meta.glob('/src/components/blog/*.md'));
-      // console.log(posts);
-      for(var i in posts){
-        this.axios.get(posts[i]).then(response => {
-          let _info = response.data.split("---")[1];
-          let _info_info = {
-            title: /title: (.+)\n/g.exec(_info)[1],
-            created_at: new Date(/date: (.+)\n/g.exec(_info)[1]).toISOString().substr(0, 10),
-            tag: /tag: (.+)\n/g.exec(_info)[1].trim().split(","),
-            category: /category: (.+)\n/g.exec(_info)[1],
-            secret: (/secret: (.+)\n/g.exec(_info)[1] === 'true')
-          }
-          this.posts.push(_info_info);
-        })
-      }
+      this.axios.get('/blog.json').then(response => {
+          this.posts = response.data;
+      })
     },
     updateGists(response) {
       for(var i in response.data){

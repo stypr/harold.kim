@@ -19,6 +19,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "blog" */ '../views/Blog.vue')
   },
   {
+    path: '/blog/:year/:month/:post',
+    name: 'BlogPost',
+    component: () => import(/* webpackChunkName: "blogpost" */ '../views/BlogPost.vue'),
+  },
+  {
     path: '/donate/',
     name: 'Donate',
     component: () => import(/* webpackChunkName: "donate" */ '../views/Donate.vue')
@@ -43,5 +48,6 @@ const router = createRouter({
   history: createWebHistory(),
   routes
 })
+
 
 export default router

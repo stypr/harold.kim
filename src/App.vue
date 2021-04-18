@@ -121,11 +121,10 @@
   #app > .container {
     position:fixed;
     left: 190px;
-    min-width: 800px;
+    min-width: 400px;
     max-width: 1200px;
     background-color:#000000dd;
     color: #ffffff;
-    min-width: 400px;
     height:100%;
     margin: 0px auto;
     overflow-y: auto;
@@ -192,6 +191,30 @@
     .menu-left #nav br{
     }
   }
+
+  .back {
+    float:right;
+    padding-right: 20px;
+    padding-top: 20px;
+    font-size: 20px;
+  }
+  pre, code {
+    font-family: 'Ubuntu Mono', monospace;
+    line-height: 1.1em;
+  }
+  pre {
+    white-space: pre-wrap;
+    background: #eee;
+    padding: 20px;
+    color: #000;
+  }
+  blockquote {
+    background: #666;
+    padding: 20px;
+    border-left: 10px solid #333;
+    color: #fff;
+    margin: 0;
+  }
 </style>
 <script>
   console.log("Designed by stypr. (https://harold.kim/)");
@@ -248,11 +271,6 @@
     },
     updated() {
       const camera = this.$refs.camera;
-      /*
-      if(renderer.renderer){
-        renderer.renderer.setSize(window.innerWidth, window.innerHeight);
-      } // .resize("window"));
-      */
       if(camera.camera){
         camera.camera.position.x = 0;
         camera.camera.position.y = 0;

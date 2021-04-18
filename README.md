@@ -1,6 +1,7 @@
 # harold.kim
 
-harold.kim on Vue+Vite+Three
+harold.kim on Vue
+design by stypr.
 
 ## Setup
 
@@ -8,4 +9,6 @@ harold.kim on Vue+Vite+Three
 
 ## Run
 
-`npm run build`
+* `npm run dev`: Development
+* `npm run build`: Build for production
+* `npm run serve`: Preview
