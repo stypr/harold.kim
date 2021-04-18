@@ -6,7 +6,7 @@
           Loading...
         </span>
         <li v-for="post in sortedPosts" :key="post.dates" >
-          <b>{{ post.created_at }}</b> {{ post.category }} {{ post.tag }}<br>
+          <b>{{ post.created_at }}</b> <span class="category">{{ post.category }}</span> <span v-for="tag in post.tag" class="tag">{{ tag }}</span><br>
           <router-link :to="post.path.substring(0)">{{ post.title }}</router-link><br><br>
         </li>
       </ul>
@@ -19,7 +19,7 @@
           Loading...
         </span>
         <li v-for="gist in gists" :key="gist.created_at">
-          <b>{{ gist.created_at }}</b> {{ gist.language }}<br>
+          <b>{{ gist.created_at }}</b> <span v-for="tag in gist.language" class="tag">{{ tag }}</span><br>
           <a :href="gist.url">{{ gist.description }}</a><br><br>
         </li>
       </ul>

@@ -130,7 +130,7 @@
     overflow-y: auto;
   }
 
-  #app > .container a, .menu-bottom a {
+  #app > .container a, .menu-bottom a, #app > .container a span {
     color: #fff;
   }
 
@@ -185,11 +185,29 @@
       top: 50%;
       margin-top: -10rem;
     }
-    .menu-left #nav a{
+    .menu-left #nav a {
       font-size: 2rem;
     }
-    .menu-left #nav br{
-    }
+  }
+
+  .tag {
+    color: #000;
+    font-size: 10pt;
+    letter-spacing:-.5px;
+    background-color: #cfd;
+    border-radius: 0.4em;
+    padding:1px 5px;
+    font-weight: bold;
+    margin-right: 3px;
+  }
+  .category {
+    color: #000;
+    font-size: 10pt;
+    letter-spacing:-.5px;
+    background-color: #cdf;
+    border-radius: 0.4em;
+    padding:1px 5px;
+    font-weight: bold;
   }
 
   .back {
@@ -201,6 +219,14 @@
   pre, code {
     font-family: 'Ubuntu Mono', monospace;
     line-height: 1.1em;
+  }
+  code a, code a span, code span {
+    color: #000 !important;
+  }
+  code {
+    background: #eee;
+    padding: 1px 2px;
+    color: #000;
   }
   pre {
     white-space: pre-wrap;
@@ -214,6 +240,10 @@
     border-left: 10px solid #333;
     color: #fff;
     margin: 0;
+  }
+
+  #disqus_thread {
+    padding: 40px;
   }
 </style>
 <script>
