@@ -12,7 +12,6 @@
     "babel-runtime": "^6.26.0",
     "git-describe": "^4.0.4",
     "three": "^0.127.0",
-    "troisjs": "^0.2.3",
     "typescript": "^4.2.4",
     "vite-plugin-components": "^0.8.4",
     "vue": "^3.0.11",

@@ -266,6 +266,8 @@ code span {
   color: #000 !important;
 }
 code {
+  word-break:break-all;
+  word-wrap:break-word;
   background: #eee;
   padding: 1px 2px;
   color: #000;
@@ -290,10 +292,11 @@ blockquote {
 </style>
 <script>
 console.log("Designed by stypr. (https://harold.kim/)");
-import { Object3D, MathUtils } from "three";
+import { Object3D, MathUtils } from "https://unpkg.com/three@0.127.0/build/three.module.js";
 import {
   Camera,
   EffectComposer,
+  BoxGeometry,
   InstancedMesh,
   PhongMaterial,
   Renderer,
@@ -302,11 +305,13 @@ import {
   Scene,
   Text,
   UnrealBloomPass,
-} from "troisjs";
+} from "https://unpkg.com/troisjs@0.2.1/build/trois.module.cdn.min.js";
+
 export default {
   components: {
     Camera,
     EffectComposer,
+    BoxGeometry,
     InstancedMesh,
     PhongMaterial,
     Renderer,

@@ -63,5 +63,9 @@ export default defineConfig({
   ],
   define: {
     'VUE_APP_GIT_HASH': VUE_APP_GIT_HASH
+  },
+  build: {
+    minify: true,
+    brotliSize: true,
   }
 });

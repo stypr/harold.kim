@@ -37,9 +37,9 @@ title: harold.kim » Donation
 | <img src=../assets/profile/jidoc.jpg width=100> | &emsp; | Junghyun Kim ([Website](https://jidoc.me))<br><ul><li>$10.00</li><li>via PayPal</li></ul> |
 | <img src=../assets/profile/posix.jpg width=100> | &emsp; | Posix ([Twitter](https://twiter.com/po6ix))<br><ul><li>$10.00</li><li>via PayPal</li></ul> |
 | <img src=../assets/profile/isopach.jpg width=100> | &emsp; | Koh You Liang &middot; isopach ([Twitter](https://twitter.com/kohyouliang))<br><ul><li>$10.00</li><li>via PayPal</li></ul> |
+| <img src=../assets/profile/extr.jpg width=100> | &emsp; | Gyuho Lee &middot; extr ([Website](https://slime.kr))<br><ul><li>2,021 KRW</li><li>via KakaoPay</li></ul> |
 
 ### Cryptocurrencies
-
 | | | |
 | --- | --- | --- |
 | <img src=../assets/profile/anonymous.png width=100> | &emsp; | Anonymous<br><ul><li>0.16043600 BTC</li><li>via Bitcoin</li></ul>  |
