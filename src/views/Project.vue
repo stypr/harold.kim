@@ -1,17 +1,17 @@
 <template>
   <div class="donate padded">
-    <DonateMarkdown />
+    <ProjectMarkdown />
   </div>
 </template>
 <script>
-import DonateMarkdown from "/src/components/Donate.md";
+import ProjectMarkdown from "/src/components/Project.md";
 
 export default {
   setup() {
     return {};
   },
   components: {
-    DonateMarkdown,
+    ProjectMarkdown,
   },
 };
 </script>

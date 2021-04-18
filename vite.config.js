@@ -3,54 +3,47 @@ import vue from '@vitejs/plugin-vue';
 import ViteComponents from 'vite-plugin-components'
 import Markdown from 'vite-plugin-md';
 import fs from 'fs';
-import {gitDescribe, gitDescribeSync} from 'git-describe';
+import { gitDescribe, gitDescribeSync } from 'git-describe';
 
 // Generate git commit id
 VUE_APP_GIT_HASH = [gitDescribeSync().hash];
 
-// Generate blog json
-BLOG_DIR = "./src/components/blog/"
-BLOG_JSON = "./public/blog.json"
-BLOG_LIST = "./src/views/BlogPost.vue"
-blog_posts = []
-fs.readdirSync(BLOG_DIR, {encoding:'utf8', flag:'r'}).forEach(file => {
-  data = fs.readFileSync(BLOG_DIR + file).toString();
-  _info = data.split("---")[1];
-  _info_title = /title: (.+)\n/g.exec(_info)[1];
-  _info_tag = /tag: (.+)\n/g.exec(_info)[1].trim().split(",");
-  _info_date = new Date(/date: (.+)\n/g.exec(_info)[1]).toISOString().substr(0, 10);
-  _info_category = /category: (.+)\n/g.exec(_info)[1];
-  _info_secret = (/secret: (.+)\n/g.exec(_info)[1] === 'true');
-  _info_file = file;
-  _info_path =  "/blog/".concat(_info_date.substring(0, 8).replace(/-/g,'/') +
-                _info_title.replace(/[^0-9A-Za-z\-\_가-힣]/g, '-')).toLowerCase()
-
-  _info_info = {
-    title: _info_title,
-    created_at: _info_date,
-    tag: _info_tag,
-    category: _info_category,
-    secret: _info_secret,
-    path: _info_path,
-    file: _info_file,
-  }
-  if (_info_info.secret === false){
-    blog_posts.push(_info_info);
+// Generate blog json and make sure all blog posts are accessible (BlogPost.vue)
+blog_dir = "./src/components/blog/";
+blog_json = "./public/blog.json";
+blog_render = "./src/views/BlogPost.vue";
+blog_posts = [];
+fs.readdirSync(blog_dir, {
+  encoding: 'utf8',
+  flag: 'r'
+}).forEach(file => {
+  if(file.indexOf(".md", file.length - 3) === -1) return;
+  data = fs.readFileSync(blog_dir + file).toString().split("---")[1];
+  parsed = {};
+  parsed.title      = /title: (.+)\n/g.exec(data)[1];
+  parsed.created_at = new Date(/date: (.+)\n/g.exec(data)[1]).toISOString().substr(0, 10);
+  parsed.tag        = /tag: (.+)\n/g.exec(data)[1].trim().split(",");
+  parsed.category   = /category: (.+)\n/g.exec(data)[1];
+  parsed.secret     = (/secret: (.+)\n/g.exec(data)[1] === 'true');
+  parsed.file       = file; // filename
+  parsed.path       = "/blog/".concat(parsed.created_at.substring(0, 8).replace(/-/g, '/') +
+                        parsed.title.replace(/[^0-9A-Za-z\-\_가-힣]/g, '-')).toLowerCase()
+  if (parsed.secret === false) {
+    blog_posts.push(parsed);
   }
 });
-fs.writeFileSync(BLOG_JSON, JSON.stringify(blog_posts))
-
+fs.writeFileSync(blog_json, JSON.stringify(blog_posts));
 // Populate blog information on blog post.
-_list = fs.readFileSync(BLOG_LIST).toString();
-_content = _list.split("<!-- list-start -->")[0] + "<!-- list-start -->"
-for(var i in blog_posts){
-  _content_filename = blog_posts[i].file.split(".")[0];
-  _content += `<${_content_filename} v-if="post_path == '${_content_filename}.md'" />`
+blog_list = fs.readFileSync(blog_render).toString();
+comment_start = "<!-- list-start -->";
+comment_end = "<!-- list-end -->";
+modified_content = blog_list.split(comment_start)[0] + comment_start;
+for (var i in blog_posts) {
+  post_filename = blog_posts[i].file.split(".")[0]
+  modified_content += `<${post_filename} v-if="post_path == '${post_filename}.md'" />`
 }
-_content += "<!-- list-end -->" + _list.split("<!-- list-end -->")[1];
-console.log(_content);
-fs.writeFileSync(BLOG_LIST, _content);
-
+modified_content += comment_end + blog_list.split(comment_end)[1];
+fs.writeFileSync(blog_render, modified_content);
 
 // https://vitejs.dev/config/
 export default defineConfig({

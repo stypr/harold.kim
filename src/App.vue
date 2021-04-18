@@ -1,27 +1,62 @@
 <template>
   <div class="menu-left">
     <div id="nav">
-      <router-link to="/">Home</router-link><br>
-      <router-link to="/about">About</router-link><br>
-      <router-link to="/blog">Blog</router-link><br>
-      <router-link to="/donate">Donate</router-link><br>
-      <router-link to="/service">Services</router-link><br>
+      <router-link to="/">Home</router-link><br />
+      <router-link to="/about">About</router-link><br />
+      <router-link to="/blog">Blog</router-link><br />
+      <router-link to="/donate">Donate</router-link><br />
+      <router-link to="/project">Project</router-link><br />
       <router-link to="/contact">Contact</router-link>
     </div>
   </div>
-  <div class="menu-bottom" style="letter-spacing: 0.1em; text-transform:none; text-align:center;">
-    <a href="//github.com/stypr/harold.kim">Made with &hearts;</a><br>
-    <small>commit: {{GIT_HASH}}</small>
+  <div
+    class="menu-bottom"
+    style="letter-spacing: 0.1em; text-transform: none; text-align: center"
+  >
+    <a href="//github.com/stypr/harold.kim">Made with &hearts;</a><br />
+    <small>commit: {{ GIT_HASH }}</small>
   </div>
   <div class="container" ref="container" v-if="isPath">
-    <router-view/>
+    <router-view />
   </div>
-  <Renderer ref="renderer" antialias resize="window" :orbit-ctrl="{ enableDamping: true, dampingFactor: 0.5, autoRotate: true , enabled: false }" shadow>
-    <Camera ref="camera" :position="{ y: 0, z: 100 }" :look-at="{ x: 0, y: 0, z: 0 }" />
+  <Renderer
+    ref="renderer"
+    antialias
+    resize="window"
+    :orbit-ctrl="{
+      enableDamping: true,
+      dampingFactor: 0.5,
+      autoRotate: true,
+      enabled: false,
+    }"
+    shadow
+  >
+    <Camera
+      ref="camera"
+      :position="{ y: 0, z: 100 }"
+      :look-at="{ x: 0, y: 0, z: 0 }"
+    />
     <Scene background="#002000">
-      <SpotLight color="#00fc00" :intensity="0.3" :position="{ y: 150, z: 0 }" :cast-shadow="true" :shadow-map-size="{ width: 1024, height: 1024 }" />
-      <SpotLight color="#00fe00" :intensity="0.5" :position="{ y: -150, z: 0 }" :cast-shadow="true" :shadow-map-size="{ width: 1024, height: 1024 }" />
-      <InstancedMesh ref="imesh" :count="NUM_INSTANCES" :cast-shadow="true" :receive-shadow="true">
+      <SpotLight
+        color="#00fc00"
+        :intensity="0.3"
+        :position="{ y: 150, z: 0 }"
+        :cast-shadow="true"
+        :shadow-map-size="{ width: 1024, height: 1024 }"
+      />
+      <SpotLight
+        color="#00fe00"
+        :intensity="0.5"
+        :position="{ y: -150, z: 0 }"
+        :cast-shadow="true"
+        :shadow-map-size="{ width: 1024, height: 1024 }"
+      />
+      <InstancedMesh
+        ref="imesh"
+        :count="NUM_INSTANCES"
+        :cast-shadow="true"
+        :receive-shadow="true"
+      >
         <BoxGeometry :width="3" :height="3" :depth="3" />
         <PhongMaterial />
       </InstancedMesh>
@@ -44,212 +79,232 @@
   </Renderer>
 </template>
 <style>
-  html, body {
-    background:transparent;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Lato, "Noto Sans KR", snas-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1 !important;
+}
+
+#app {
+  background: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+.menu-left {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: Lato;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.6rem;
+  background-color: #000000cc;
+  color: #fff;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.menu-left > #nav {
+  padding: 30px;
+}
+
+.menu-left > #nav a {
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.8em;
+  text-decoration: none;
+}
+
+.menu-left > #nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+.menu-bottom {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: Lato;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 0.6rem;
+  background-color: #000000cc;
+  color: #fff;
+  text-align: left;
+  font-size: 1rem;
+}
+
+#app > .container {
+  position: fixed;
+  left: 190px;
+  min-width: 400px;
+  max-width: 1200px;
+  background-color: #000000dd;
+  color: #ffffff;
+  height: 100%;
+  margin: 0px auto;
+  overflow-y: auto;
+}
+
+#app > .container a,
+.menu-bottom a,
+#app > .container a span {
+  color: #fff;
+}
+
+#app > .container a:hover,
+.menu-bottom a:hover {
+  color: #fee;
+  text-shadow: 0 0 10px #70f030;
+}
+
+.block {
+  display: none;
+}
+.padded {
+  padding: 30px;
+}
+
+@media (max-width: 800px) {
+  body {
+    overflow-y: scroll;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #app {
     width: 100%;
     height: 100%;
-    font-family: Lato, 'Noto Sans KR', snas-serif;
+    background: transparent;
   }
-
-  body {
-    padding:0;
-    margin: 0;
-    overflow: hidden;
-  }
-
-  canvas{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index: -1 !important;
-  }
-  
-  #app {
-    background: #000;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-  }
-
-  .menu-left {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-family: Lato;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: .6rem;
-    background-color: #000000cc;
-    color: #fff;
-    text-align: left;
-    font-size: 1.2rem;
-  }
-
-  .menu-left > #nav {
-    padding: 30px;
-  }
-
-  .menu-left > #nav a {
-    font-weight: bold;
-    color: #fff;
-    line-height: 1.8em;
-    text-decoration: none; 
-  }
-
-  .menu-left > #nav a.router-link-exact-active {
-    color: #42b983;
-  }
-
-  .menu-bottom {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-family: Lato;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    padding: .6rem;
-    background-color: #000000cc;
-    color: #fff;
-    text-align: left;
-    font-size: 1rem;
-  }
-
   #app > .container {
-    position:fixed;
-    left: 190px;
-    min-width: 400px;
-    max-width: 1200px;
-    background-color:#000000dd;
-    color: #ffffff;
-    height:100%;
-    margin: 0px auto;
-    overflow-y: auto;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
   }
-
-  #app > .container a, .menu-bottom a, #app > .container a span {
-    color: #fff;
-  }
-
-  #app > .container a:hover, .menu-bottom a:hover {
-    color: #fee;
-     text-shadow: 0 0 10px #70f030;
-  }
-
-  .block {
-    display: none;
-  }
-  .padded {
-    padding: 30px;
-  }
-
-  @media(max-width:800px){
-    body{
-      overflow-y:scroll;
-      margin-left:0;
-      margin-right:0;
-    }
-    #app {
-      width: 100%;
-      height: 100%;
-      background:transparent;
-    }
-    #app > .container {
-      position: relative;
-      left: 0px;
-      top: 0px;
-      width: 100%;
-      min-height: 100%;
-      height: auto;
-    }
-    .menu-left {
-      background:#000000cc;
-      position: relative;
-      min-height: 100%;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-    }
-    .menu-left #nav {
-      background: transparent;
-      margin: 0 auto;
-      position: absolute;
-      z-index: 1!important;
-      width: 100%;
-      height: 50%;
-      text-align: center;
-      padding: 0;
-      top: 50%;
-      margin-top: -10rem;
-    }
-    .menu-left #nav a {
-      font-size: 2rem;
-    }
-  }
-
-  .tag {
-    color: #000;
-    font-size: 10pt;
-    letter-spacing:-.5px;
-    background-color: #cfd;
-    border-radius: 0.4em;
-    padding:1px 5px;
-    font-weight: bold;
-    margin-right: 3px;
-  }
-  .category {
-    color: #000;
-    font-size: 10pt;
-    letter-spacing:-.5px;
-    background-color: #cdf;
-    border-radius: 0.4em;
-    padding:1px 5px;
-    font-weight: bold;
-  }
-
-  .back {
-    float:right;
-    padding-right: 20px;
-    padding-top: 20px;
-    font-size: 20px;
-  }
-  pre, code {
-    font-family: 'Ubuntu Mono', monospace;
-    line-height: 1.1em;
-  }
-  code a, code a span, code span {
-    color: #000 !important;
-  }
-  code {
-    background: #eee;
-    padding: 1px 2px;
-    color: #000;
-  }
-  pre {
-    white-space: pre-wrap;
-    background: #eee;
-    padding: 20px;
-    color: #000;
-  }
-  blockquote {
-    background: #666;
-    padding: 20px;
-    border-left: 10px solid #333;
-    color: #fff;
+  .menu-left {
+    background: #000000cc;
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    padding: 0;
     margin: 0;
   }
-
-  #disqus_thread {
-    padding: 40px;
+  .menu-left #nav {
+    background: transparent;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1 !important;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    padding: 0;
+    top: 50%;
+    margin-top: -10rem;
   }
+  .menu-left #nav a {
+    font-size: 2rem;
+  }
+}
+
+.tag {
+  color: #000;
+  font-size: 10pt;
+  letter-spacing: -0.5px;
+  background-color: #cfd;
+  border-radius: 0.4em;
+  padding: 1px 5px;
+  font-weight: bold;
+  margin-right: 3px;
+}
+.category {
+  color: #000;
+  font-size: 10pt;
+  letter-spacing: -0.5px;
+  background-color: #cdf;
+  border-radius: 0.4em;
+  padding: 1px 5px;
+  font-weight: bold;
+}
+
+.back {
+  float: right;
+  padding-right: 20px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+pre,
+code {
+  font-family: "Ubuntu Mono", monospace;
+  line-height: 1.1em;
+}
+code a,
+code a span,
+code span {
+  color: #000 !important;
+}
+code {
+  background: #eee;
+  padding: 1px 2px;
+  color: #000;
+}
+pre {
+  white-space: pre-wrap;
+  background: #eee;
+  padding: 20px;
+  color: #000;
+}
+blockquote {
+  background: #666;
+  padding: 20px;
+  border-left: 10px solid #333;
+  color: #fff;
+  margin: 0;
+}
+
+#disqus_thread {
+  padding: 40px;
+}
 </style>
 <script>
-  console.log("Designed by stypr. (https://harold.kim/)");
-  import { Object3D, MathUtils } from 'three';
-  import {
+console.log("Designed by stypr. (https://harold.kim/)");
+import { Object3D, MathUtils } from "three";
+import {
+  Camera,
+  EffectComposer,
+  InstancedMesh,
+  PhongMaterial,
+  Renderer,
+  RenderPass,
+  SpotLight,
+  Scene,
+  Text,
+  UnrealBloomPass,
+} from "troisjs";
+export default {
+  components: {
     Camera,
     EffectComposer,
     InstancedMesh,
@@ -260,56 +315,44 @@
     Scene,
     Text,
     UnrealBloomPass,
-  } from 'troisjs';
-  export default {
-    components: {
-      Camera,
-      EffectComposer,
-      InstancedMesh,
-      PhongMaterial,
-      Renderer,
-      RenderPass,
-      SpotLight,
-      Scene,
-      Text,
-      UnrealBloomPass,
+  },
+  setup() {
+    return {
+      NUM_INSTANCES: 1000,
+      GIT_HASH: VUE_APP_GIT_HASH[0],
+    };
+  },
+  mounted() {
+    // console.log(this.three);
+    const imesh = this.$refs.imesh.mesh;
+    const dummy = new Object3D();
+    const { randFloat: rnd, randFloatSpread: rndFS } = MathUtils;
+    for (let i = 0; i < this.NUM_INSTANCES; i++) {
+      dummy.position.set(rndFS(200), rndFS(200), rndFS(200));
+      const scale = rnd(0.3, 1);
+      dummy.scale.set(scale, scale, scale);
+      dummy.updateMatrix();
+      imesh.setMatrixAt(i, dummy.matrix);
+    }
+    imesh.instanceMatrix.needsUpdate = true;
+  },
+  computed: {
+    isPath() {
+      return this.$route.name !== "Home";
     },
-    setup() {
-      return {
-        NUM_INSTANCES: 1000,
-        GIT_HASH: VUE_APP_GIT_HASH[0],
-      };
-    },
-    mounted() {
-      // console.log(this.three);
-      const imesh = this.$refs.imesh.mesh;
-      const dummy = new Object3D();
-      const { randFloat: rnd, randFloatSpread: rndFS } = MathUtils;
-      for (let i = 0; i < this.NUM_INSTANCES; i++) {
-        dummy.position.set(rndFS(200), rndFS(200), rndFS(200)); 
-        const scale = rnd(0.3, 1);
-        dummy.scale.set(scale, scale, scale);
-        dummy.updateMatrix();
-        imesh.setMatrixAt(i, dummy.matrix);
-      }
-      imesh.instanceMatrix.needsUpdate = true;
-    },
-    computed: {
-      isPath() {
-        return this.$route.name !== 'Home'
-      },
-    },
-    updated() {
-      const camera = this.$refs.camera;
-      if(camera.camera){
-        camera.camera.position.x = 0;
-        camera.camera.position.y = 0;
-        camera.camera.position.z = 100;
-      }
-      const el = this.$refs.container;
-      if (el) {
-        el.scrollIntoView({behavior: 'smooth'});
-      }
-    },
-  };
+  },
+  updated() {
+    document.title = "harold.kim";
+    const camera = this.$refs.camera;
+    if (camera.camera) {
+      camera.camera.position.x = 0;
+      camera.camera.position.y = 0;
+      camera.camera.position.z = 100;
+    }
+    const el = this.$refs.container;
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  },
+};
 </script>

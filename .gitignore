@@ -4,3 +4,4 @@ dist
 dist-ssr
 *.local
 src/components/blog/*.md
+public/blog.json

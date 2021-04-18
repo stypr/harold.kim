@@ -5,11 +5,11 @@
 </template>
 
 <script>
-  import NotFoundMarkdown from '/src/components/NotFound.md'
-  export default {
-    name: 'NotFound',
-    components: {
-        NotFoundMarkdown,
-    }
-  }
+import NotFoundMarkdown from "/src/components/NotFound.md";
+export default {
+  name: "NotFound",
+  components: {
+    NotFoundMarkdown,
+  },
+};
 </script>

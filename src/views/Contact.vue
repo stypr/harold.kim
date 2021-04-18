@@ -4,14 +4,14 @@
   </div>
 </template>
 <script>
-import ContactMarkdown from '/src/components/Contact.md'
+import ContactMarkdown from "/src/components/Contact.md";
 
 export default {
   setup() {
     return {};
   },
   components: {
-      ContactMarkdown,
-  }
-}
+    ContactMarkdown,
+  },
+};
 </script>

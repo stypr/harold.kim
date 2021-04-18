@@ -1,5 +1,5 @@
 ---
-name: 404 Not Found
+title: harold.kim » 404
 ---
 
 # &#129327; 404 Not Found
