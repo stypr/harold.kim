@@ -302,7 +302,15 @@ blockquote {
 }
 </style>
 <script>
-console.log("Designed by stypr. (https://harold.kim/)");
+console.log("[*] Designed by stypr. (https://harold.kim/)");
+
+// Diqus
+var d = document, s = d.createElement('script');
+    s.src = 'https://haroldie.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+
+// 3D
 import { Object3D, MathUtils } from "https://unpkg.com/three@0.127.0/build/three.module.js";
 import {
   Camera,
@@ -363,9 +371,8 @@ export default {
     }
     const camera = this.$refs.camera;
     if (camera.camera) {
-      camera.camera.position.x = 0;
+      // Changing position x and z can change the location of the Camera
       camera.camera.position.y = 0;
-      camera.camera.position.z = 100;
     }
     const el = this.$refs.container;
     if (el) {

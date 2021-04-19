@@ -8,21 +8,21 @@
 </template>
 <script type="module">
 import axios from 'axios';
-var d = document, s = d.createElement('script');
-    s.src = 'https://haroldie.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
 
 export default {
   data() {
     return {
-        post_path: '',
-        post_error: false,
+      posts: [],
+      post_path: '',
+      post_error: false,
     };
   },
   mounted() {
-    this.axios.get('/blog.json').then(response => {
-      let q = response.data.filter((r) => r.path == location.pathname);
+    this.readPost();
+  },
+  methods: {
+    renderPost(){
+      let q = this.posts.filter((r) => r.path == location.pathname);
       if(q[0]){
           this.post_path = q[0].file;
       }else{
@@ -36,7 +36,20 @@ export default {
           }
         });
       }
-    })
-  },
+    },
+    readPost() {
+      if (this.$store.posts) {
+        // console.log("[*] Load from cache");
+        this.posts = this.$store.posts;
+        this.renderPost();
+      }else{
+        this.axios.get("/blog.json").then((response) => {
+          this.$store.posts = response.data;
+          this.posts = response.data;
+          this.renderPost();
+        });
+      }
+    },
+  }
 }
 </script>

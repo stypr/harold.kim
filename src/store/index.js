@@ -5,6 +5,7 @@ import {
 export default createStore({
   state: {
     gists: [],
+    posts: [],
   },
   mutations: {},
   actions: {},

@@ -8,8 +8,10 @@ title: harold.kim » About
 
 # Harold Kim <small style="font-size:70%; margin-left: 10px;">a.k.a. stypr</small>
 
-Currently working as a security engineer in Japan.
+Currently working as a security engineer in Japan.<br>
+Interested in web exploitation, pentests and development.
 
+---
 
 <br>
 

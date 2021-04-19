@@ -48,9 +48,15 @@ export default {
   },
   methods: {
     getPosts() {
-      this.axios.get("/blog.json").then((response) => {
-        this.posts = response.data;
-      });
+      if (this.$store.posts) {
+        // console.log("[*] Load from cache");
+        this.posts = this.$store.posts;
+      }else{
+        this.axios.get("/blog.json").then((response) => {
+          this.$store.posts = response.data;
+          this.posts = response.data;
+        });
+      }
     },
     updateGists(response) {
       for (var i in response.data) {
