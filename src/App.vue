@@ -9,15 +9,15 @@
       <router-link to="/contact">Contact</router-link>
     </div>
   </div>
+  <div class="container" ref="container" v-if="isPath">
+    <router-view />
+  </div>
   <div
     class="menu-bottom"
     style="letter-spacing: 0.1em; text-transform: none; text-align: center"
   >
     <a href="//github.com/stypr/harold.kim">Made with &hearts;</a><br />
     <small>commit: {{ GIT_HASH }}</small>
-  </div>
-  <div class="container" ref="container" v-if="isPath">
-    <router-view />
   </div>
   <Renderer
     ref="renderer"
@@ -185,55 +185,6 @@ canvas {
   padding: 30px;
 }
 
-@media (max-width: 800px) {
-  body {
-    overflow-y: scroll;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  #app {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-  }
-
-  #app > .container {
-    position: relative;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    min-height: 100%;
-    height: auto;
-  }
-
-  .menu-left {
-    background: #000000cc;
-    position: relative;
-    min-height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-
-  .menu-left #nav {
-    background: transparent;
-    margin: 0 auto;
-    position: absolute;
-    z-index: 1 !important;
-    width: 100%;
-    height: 50%;
-    text-align: center;
-    padding: 0;
-    top: 50%;
-    margin-top: -10rem;
-  }
-
-  .menu-left #nav a {
-    font-size: 2rem;
-  }
-}
-
 .tag {
   color: #000;
   font-size: 10pt;
@@ -300,15 +251,63 @@ blockquote {
 #disqus_thread {
   padding: 40px;
 }
+
+@media (max-width: 800px) {
+  body {
+    overflow-y: scroll;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #app {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+  }
+
+  #app > .container {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+  }
+
+  .menu-left {
+    background: #000000cc;
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu-left #nav {
+    background: transparent;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1 !important;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    padding: 0;
+    top: 50%;
+    margin-top: -10rem;
+  }
+
+  .menu-left #nav a {
+    font-size: 2rem;
+  }
+  
+  .menu-bottom {
+    position:unset;
+    padding:50px;
+  }
+}
 </style>
 <script>
 console.log("[*] Designed by stypr. (https://harold.kim/)");
-
-// Diqus
-var d = document, s = d.createElement('script');
-    s.src = 'https://haroldie.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
 
 // 3D
 import { Object3D, MathUtils } from "https://unpkg.com/three@0.127.0/build/three.module.js";

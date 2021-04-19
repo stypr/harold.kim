@@ -1,6 +1,7 @@
 import {
   createRouter,
-  createWebHistory
+  createWebHistory,
+  createMemoryHistory
 } from 'vue-router'
 import Home from '../views/Home.vue'
 
@@ -45,8 +46,10 @@ const routes = [{
   },
 ]
 
+const isServer = typeof window === 'undefined';
+const history = isServer ? createMemoryHistory() : createWebHistory();
 const router = createRouter({
-  history: createWebHistory(),
+  history,
   routes
 })
 

@@ -28,13 +28,21 @@ export default {
       }else{
           this.post_error = true;
       }
+      // Disqus
       if(typeof DISQUS !== 'undefined'){
+        // Reset DISQUS since it is already loaded.
         DISQUS.reset({
           reload: true,
           config: function () {
             this.page.url = location.href;
           }
         });
+      }else{
+        // Dynamically load DISQUS on BlogPost
+        var d = document, s = d.createElement('script');
+            s.src = 'https://haroldie.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
       }
     },
     readPost() {
