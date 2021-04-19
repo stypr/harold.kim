@@ -9,6 +9,7 @@ import { gitDescribe, gitDescribeSync } from 'git-describe';
 VUE_APP_GIT_HASH = [gitDescribeSync().hash];
 
 // Generate blog json and make sure all blog posts are accessible (BlogPost.vue)
+// Sorry for the dirty code. Written to fix vue-related issues and legacy issues.
 blog_dir = "./src/components/blog/";
 blog_json = "./public/blog.json";
 blog_render = "./src/views/BlogPost.vue";
@@ -47,6 +48,7 @@ fs.writeFileSync(blog_render, modified_content);
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: 'https://harold.kim/',
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/],
