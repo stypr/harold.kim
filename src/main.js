@@ -5,7 +5,6 @@ import store from './store';
 import axios from 'axios';
 import { createHead } from '@vueuse/head';
 
-// Start the app
 const app = createApp(App);
 const head = createHead();
 

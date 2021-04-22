@@ -119,7 +119,7 @@ canvas {
   top: 0;
   left: 0;
   padding: 0.6rem;
-  background-color: #000000cc;
+  background: #000000cc;
   color: #fff;
   text-align: left;
   font-size: 1.2rem;
@@ -303,6 +303,7 @@ blockquote {
   .menu-bottom {
     position:unset;
     padding:50px;
+    background: #000000dd;
   }
 }
 </style>
