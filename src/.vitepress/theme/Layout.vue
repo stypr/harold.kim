@@ -1,7 +1,7 @@
 <template>
   <NavBar />
   <Container />
-  <div class="menu-bottom" style="letter-spacing: 0.1em; text-transform: none; text-align: center">
+  <div class="menu-bottom">
     <a href="//github.com/stypr/harold.kim">Made with &hearts;</a><br />
     <small>{{ GIT_HASH }}</small>
   </div>

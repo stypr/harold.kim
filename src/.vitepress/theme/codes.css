@@ -7,6 +7,10 @@
     color: #888;
 }
 
+code a span {
+    color: #000 !important;
+}
+
 .token.comment,
 .token.block-comment,
 .token.prolog,

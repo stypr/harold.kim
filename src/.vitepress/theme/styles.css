@@ -50,6 +50,7 @@ canvas {
 	color: #fff;
 	text-align: left;
 	font-size: 1.2rem;
+	z-index: 100 !important;
 }
 
 .menu-left>#nav {
@@ -79,6 +80,9 @@ canvas {
 	color: #fff;
 	text-align: left;
 	font-size: 1rem;
+	letter-spacing: 0.1em;
+	text-align: center;
+	z-index: 10 !important;
 }
 
 #app>.container {
@@ -91,6 +95,7 @@ canvas {
 	height: 100%;
 	margin: 0px auto;
 	overflow-y: auto;
+	z-index: 100 !important;
 }
 
 #app>.container a,
