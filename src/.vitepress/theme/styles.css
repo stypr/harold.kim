@@ -34,6 +34,10 @@ canvas {
 	display: none;
 }
 
+.display {
+	display: block !important;
+}
+
 .menu-left {
 	text-transform: uppercase;
 	letter-spacing: 3px;

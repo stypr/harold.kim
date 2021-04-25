@@ -9,7 +9,7 @@ export default {
   NotFound,
   enhanceApp({ app, router, siteData }) {
     // app.use(store);
-    app.use(router);
+    // app.use(router);
     app.component('Dyn', Dyn);
   }
-};
+}
