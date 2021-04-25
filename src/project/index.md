@@ -1,5 +1,5 @@
 ---
-title: harold.kim » Projects
+title: Projects
 ---
 
 # &#129520; Projects

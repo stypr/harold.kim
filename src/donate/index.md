@@ -1,5 +1,5 @@
 ---
-title: harold.kim » Donation
+title: Donation
 ---
 
 # &#128184; Donation is ♥
@@ -10,9 +10,9 @@ title: harold.kim » Donation
 
 ## &#128180; How to donate
 
-* By using [PayPal](//www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7XMZ85VADYMG2)
-* By using <a href="//qr.kakaopay.com/281006011000024890934332">KakaoPay</a><br>
-* <a href="//www.amazon.co.jp/gp/registry/wishlist/3LVDOY4S0PNRF">Amazon Wishlist</a> is now supported.
+* By using [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7XMZ85VADYMG2)
+* By using <a href="https://qr.kakaopay.com/281006011000024890934332">KakaoPay</a><br>
+* <a href="https://www.amazon.co.jp/gp/registry/wishlist/3LVDOY4S0PNRF">Amazon Wishlist</a> is now supported.
 * I have plans to support other types in the future (i.e. WeChat, AliPay, BitCoin, etc.)
 * **After the successful domain, Please drop me an e-mail if the page is not updated for a long time<br>(me&#64;h<span class="block">harold</span>arold.kim)**
 

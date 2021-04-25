@@ -1,30 +1,19 @@
 {
-  "name": "harold.kim",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "dependencies": {
-    "@vue/server-renderer": "^3.0.11",
-    "@vueuse/head": "^0.5.1",
-    "axios": "^0.21.1",
-    "babel-runtime": "^6.26.0",
-    "express": "^4.17.1",
-    "git-describe": "^4.0.4",
-    "three": "^0.127.0",
-    "troisjs": "^0.2.3",
-    "typescript": "^4.2.4",
-    "vite-plugin-components": "^0.8.4",
-    "vue": "^3.0.11",
-    "vue-router": "^4.0.6",
-    "vuex": "^4.0.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^1.2.1",
-    "@vue/compiler-sfc": "^3.0.11",
-    "vite": "^2.1.5",
-    "vite-plugin-md": "^0.6.3"
-  }
+	"name": "harold.kim",
+	"version": "1.1.2",
+	"license": "BSD",
+	"scripts": {
+		"dev": "vitepress dev src",
+		"build": "vitepress build src",
+		"serve": "vitepress serve src"
+	},
+	"target": "esnext",
+	"module": "commonjs",
+	"devDependencies": {
+		"three": "^0.127.0",
+		"troisjs": "0.2.3",
+		"vitepress": "0.13.0",
+		"axios": "^0.21.1",
+		"glob": "^7.1.6"
+	}
 }

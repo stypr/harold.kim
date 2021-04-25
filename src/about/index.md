@@ -1,5 +1,5 @@
 ---
-title: harold.kim » About
+title: About
 ---
 
 <br>
@@ -17,9 +17,9 @@ Interested in web exploitation, pentests and development.
 
 ### &#128064; Affiliated with
 
-* &#128188; [Flatt Security Inc.](//flatt.tech)
-* &#128300; [HypwnLab](//hypwnlab.com)
-* &#128681; [r3kapig](//r3kapig.com)
+* &#128188; [Flatt Security Inc.](https://flatt.tech)
+* &#128300; [HypwnLab](https://hypwnlab.com)
+* &#128681; [r3kapig](https://r3kapig.com)
 
 ### &#128030; Disclosed vulnerabilities
 

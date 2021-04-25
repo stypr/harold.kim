@@ -2,12 +2,14 @@
 
 harold.kim on Vue, design by stypr.
 
+Rebuilt to work in SSR. Commits before [ce4d3e34](https://github.com/stypr/harold.kim/commit/ce4d3e34bd119a3b07537d16cc7b40f1c63c3f43) are for SPA applicaitons.
+
 ## Setup
 
-`npm i`
+`yarn install`
 
 ## Run
 
-* `npm run dev`: Development
-* `npm run build`: Build for production
-* `npm run serve`: Preview
+* `yarn dev`: Development
+* `yarn build`: Build for production
+* `yarn serve`: Preview

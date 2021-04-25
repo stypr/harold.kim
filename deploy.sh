@@ -4,10 +4,11 @@
 set -e
 
 # build
-npm run build
+yarn build
 
 # setup env
-cd dist
+cd src/.vitepress/dist
+cp index.html 404.html
 echo 'harold.kim' > CNAME
 
 # git commit

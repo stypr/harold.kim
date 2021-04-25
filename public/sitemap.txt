@@ -1,2 +1,0 @@
-https://harold.kim/
-https://harold.kim/?/blog/2020/09/unauthenticated-authenticated-remote-code-execution-in-ec-cube

@@ -1,0 +1,231 @@
+html,
+body {
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-family: Lato, "Noto Sans KR", snas-serif;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1 !important;
+}
+
+#app {
+	background: #000;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #2c3e50;
+}
+
+.hidden {
+	display: none;
+}
+
+.menu-left {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-family: Lato;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 0.6rem;
+	background-color: #000000cc;
+	color: #fff;
+	text-align: left;
+	font-size: 1.2rem;
+}
+
+.menu-left>#nav {
+	padding: 30px;
+}
+
+.menu-left>#nav a {
+	font-weight: bold;
+	color: #fff;
+	line-height: 1.8em;
+	text-decoration: none;
+}
+
+.menu-left>#nav a.router-link-exact-active {
+	color: #42b983;
+}
+
+.menu-bottom {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-family: Lato;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	padding: 0.6rem;
+	background-color: #000000cc;
+	color: #fff;
+	text-align: left;
+	font-size: 1rem;
+}
+
+#app>.container {
+	position: fixed;
+	left: 190px;
+	min-width: 400px;
+	max-width: 1200px;
+	background-color: #000000dd;
+	color: #ffffff;
+	height: 100%;
+	margin: 0px auto;
+	overflow-y: auto;
+}
+
+#app>.container a,
+.menu-bottom a,
+#app>.container a span {
+	color: #fff;
+}
+
+#app>.container a:hover,
+.menu-bottom a:hover {
+	color: #fee;
+	text-shadow: 0 0 10px #70f030;
+}
+
+.block {
+	display: none;
+}
+
+.padded {
+	padding: 30px;
+}
+
+.tag {
+	color: #000;
+	font-size: 10pt;
+	letter-spacing: -0.5px;
+	background-color: #cfd;
+	border-radius: 0.4em;
+	padding: 1px 5px;
+	font-weight: bold;
+	margin-right: 3px;
+}
+
+.category {
+	color: #000;
+	font-size: 10pt;
+	letter-spacing: -0.5px;
+	background-color: #cdf;
+	border-radius: 0.4em;
+	padding: 1px 5px;
+	font-weight: bold;
+}
+
+.back {
+	float: right;
+	padding-right: 20px;
+	padding-top: 20px;
+	font-size: 20px;
+}
+
+pre,
+code {
+	font-family: "Ubuntu Mono", monospace;
+	line-height: 1.1em;
+}
+
+code a,
+code a span,
+code span {
+	color: #000;
+}
+
+code {
+	word-break: break-all;
+	word-wrap: break-word;
+	background: #eee;
+	padding: 1px 2px;
+	color: #000;
+}
+
+pre {
+	white-space: pre-wrap;
+	background: #eee;
+	padding: 20px;
+	color: #000;
+}
+
+blockquote {
+	background: #666;
+	padding: 20px;
+	border-left: 10px solid #333;
+	color: #fff;
+	margin: 0;
+}
+
+#disqus_thread {
+	padding: 40px;
+}
+
+@media (max-width: 800px) {
+	body {
+		overflow-y: scroll;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	#app {
+		width: 100%;
+		height: 100%;
+		background: transparent;
+	}
+
+	#app>.container {
+		position: relative;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		min-height: 100%;
+		height: auto;
+	}
+
+	.menu-left {
+		background: #000000cc;
+		position: relative;
+		min-height: 100%;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	.menu-left #nav {
+		background: transparent;
+		margin: 0 auto;
+		position: absolute;
+		z-index: 1 !important;
+		width: 100%;
+		height: 50%;
+		text-align: center;
+		padding: 0;
+		top: 50%;
+		margin-top: -10rem;
+	}
+
+	.menu-left #nav a {
+		font-size: 2rem;
+	}
+
+	.menu-bottom {
+		position: unset;
+		padding: 50px;
+	}
+}
