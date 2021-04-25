@@ -16,7 +16,7 @@ exports.getPosts = () => {
             _parsed = {}
             _parsed.title = post_metadata.data.title
             _parsed.created_at = new Date(post_metadata.data.date).toISOString().substr(0, 10);
-            _parsed.tag = post_metadata.data.tag.trim().split(",")
+            _parsed.tag = post_metadata.data.tag //.trim().split(",")
             _parsed.category = post_metadata.data.category
             _parsed.filename = posts[i].substring(posts[i].indexOf("/blog"), posts[i].lastIndexOf("/")).concat("/")
             result.push(_parsed)
