@@ -2,6 +2,8 @@
 title: Projects
 ---
 
+<div class="responsive-page">
+
 # &#129520; Projects
 
 
@@ -27,3 +29,4 @@ title: Projects
 |  | &emsp; | <h2><A href="//github.com/stypr/ehnd-kor">ehnd-kor</a> / <a href="//github.com/stypr/ehnd-py">ehnd-py</a></h2> <span class="tag">Python</span><span class="tag">C++</span><span class="tag">Windows</span><span class="tag">Translation</span><br><br>Porting the original standalone Korean-Japanese translation<br> software to create a Python interface and a web service. |
 
 -->
+</div>

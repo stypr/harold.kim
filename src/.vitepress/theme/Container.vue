@@ -1,6 +1,7 @@
 <template>
-  <div class="container hidden" :class="{ 'display': !isRoot }" :key="exec">
-    <div class="padded">
+  <div class="container hidden" :class="{ 'display': !isRoot }">
+    <div class="padded" ref="container">
+      <a href="/blog/" class="back" v-if="post_view">&laquo; Article List</a>
       <Content />
       <div id="disqus_thread" :class="{ 'hidden': !post_view }"></div>
     </div>
@@ -12,7 +13,6 @@ import { useRoute } from "vitepress";
 export default {
   data() {
     return {
-      exec: false,
       post_view: false,
     }
   },
@@ -20,13 +20,18 @@ export default {
     isRoot() {
       let route = useRoute();
       if (route.path) {
-        return route.path === "/";
+        return route.path === "/" || route.path === "/index.html";
       } else {
-        return true;
+        return false;
       }
     },
   },
   methods: {
+    jumpContainer() {
+      this.$nextTick(() => {
+        this.$refs.container.scrollIntoView({ behavior: 'smooth' });
+      });
+    },
     loadDisqus() {
       // Disqus
       if(typeof DISQUS !== 'undefined'){
@@ -46,17 +51,19 @@ export default {
       }
     }
   },
-  mounted(){
-    this.exec = true
-  },
   updated(){
+    this.jumpContainer();
     let route = useRoute();
-    if(route.path.startsWith("/blog/") && route.path !== '/blog/'){
-      this.post_view = true;
-      this.loadDisqus();
+    if(route.path){
+      if(route.path.startsWith("/blog/") && route.path !== '/blog/' && route.path !== '/blog/index.html'){
+        this.post_view = true;
+        this.loadDisqus();
+      }else{
+        this.post_view = false;
+      }
     }else{
       this.post_view = false;
     }
-  }
+  },
 };
 </script>

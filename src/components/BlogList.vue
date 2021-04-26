@@ -17,10 +17,8 @@
     <span v-if="!(gists.length && !gists_error)"> Loading... </span>
     <li v-for="gist in gists" :key="gist.created_at">
       <b>{{ gist.created_at }}</b>
-      &nbsp;<span v-for="language in gist.language" class="tag">{{ language }}</span
-      ><br />
-      <a :href="gist.url">{{ gist.description }}</a
-      ><br /><br />
+      &nbsp;<span v-for="language in gist.language" :key="language" class="tag">{{ language }}</span><br />
+      <a :href="gist.url">{{ gist.description }}</a><br /><br />
     </li>
   </ul>
 </template>
@@ -29,9 +27,6 @@
 import { useSiteData } from 'vitepress'
 
 export default {
-  setup() {
-    return {};
-  },
   data() {
     return {
       posts: [],
@@ -81,10 +76,12 @@ export default {
   },
   computed: {
     sortedPosts: function () {
-      this.posts.sort((a, b) => {
-        return new Date(b.created_at) - new Date(a.created_at);
-      });
-      return this.posts;
+      if(this.posts){
+        this.posts.sort((a, b) => {
+          return new Date(b.created_at) - new Date(a.created_at);
+        });
+        return this.posts;
+      }
     },
   }
 };

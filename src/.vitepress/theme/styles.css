@@ -236,5 +236,37 @@ blockquote {
 	.menu-bottom {
 		position: unset;
 		padding: 50px;
+		background-color: #000000ee;
+	}
+
+	
+	.responsive-page tbody tr {
+		margin-bottom: 40px;
+		display: block;
+	}
+	.responsive-page h2 {
+		padding-top: 20px;
+		padding-bottom: 10px;
+	}
+	.responsive-page td {
+		display: block;
+		width: 100%;
+		margin: 0;
+	}
+	.responsive-page td img {
+		width:100%;
+		height: calc((100vw - 20px) * 0.5625);
+	}
+	.responsive-page td:nth-child(2) {
+		display: none;
+	}
+	.responsive-page h2 {
+		margin: 0;
+	}
+	.responsive-page br {
+		content: "";
+		margin: 0em;
+		display: block;
+		font-size: 24%;
 	}
 }

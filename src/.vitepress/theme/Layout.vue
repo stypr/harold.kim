@@ -9,9 +9,7 @@
     <Dyn component="Background" />
   </ClientOnly>
 </template>
-
 <script setup lang="ts">
-import { watch } from 'vue'
 import { useSiteData } from 'vitepress'
 import Container from './Container.vue';
 import NavBar from './NavBar.vue';

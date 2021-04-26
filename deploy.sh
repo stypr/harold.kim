@@ -8,7 +8,7 @@ yarn build
 
 # setup env
 cd src/.vitepress/dist
-cp index.html 404.html
+cp ../../../404.html 404.html
 echo 'harold.kim' > CNAME
 
 # git commit

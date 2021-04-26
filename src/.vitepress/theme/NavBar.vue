@@ -1,10 +1,10 @@
 <template>
-  <div class="menu-left" :key="exec">
+  <div class="menu-left">
     <div id="nav">
       <a
         v-bind:class="{
           'router-link-exact-active':
-            menu.link == route.path ||
+            (menu.link == route.path || menu.link + 'index.html' == route.path) ||
             (menu.link == '/blog/' && route.path.match(/^\/blog/)),
         }"
         v-bind:href="menu.link"
@@ -24,14 +24,6 @@ export default {
     return {
       route: useRoute(),
     };
-  },
-  data() {
-    return {
-      exec: false,
-    };
-  },
-  mounted() {
-    this.exec = true;
-  },
+  }
 };
 </script>
