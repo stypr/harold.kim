@@ -30,10 +30,11 @@ title: Donation
 | --- | --- | --- |
 | <img src=../assets/profile/initbar.png width=100> | &emsp; | Herbert Shin &middot; initbar ([Website](https://init.bar/))<br><ul><li>$80.86</li><li>via PayPal</li></ul> |
 | <img src=../assets/profile/kazet.jpg width=100> | &emsp; | Krzysztof Zając &middot; kazet ([p4](https://p4.team/))<br><ul><li>$30.00</li><li>via PayPal</li></ul> |
+| <img src=../assets/profile/shpik.jpg width=100> | &emsp; | Sehun Oh &middot; shpik ([Website](https://shpik.kr/))<br><ul><li>22,222 KRW</li><li>via KakaoPay</li></ul> |
 | <img src=../assets/profile/jinmo123.jpg width=100> | &emsp; | Yonghwi Jin &middot; jinmo123 ([Facebook](https://facebook.com/jinyonghwi/))<br><ul><li>$20.86</li><li>via PayPal</li></ul> |
 | <img src=../assets/profile/cothan.jpg width=100> | &emsp; | Cothan Duc Nguyen &middot; cothan ([Twitter](https://twitter.com/c0th4n))<br><ul><li>$13.37</li><li>via PayPal</li></ul> |
 | <img src=../assets/profile/hertz.jpg width=100> | &emsp; | Bugarin Nicolae Daniel &middot; Hertz ([Twitter](https://twitter.com/Hertz_))<br><ul><li>$13.37</li><li>via PayPal</li></ul> |
-| <img src=../assets/profile/gnxbr.jpg width=100> | &emsp; | Álisson Bertochi &middot; gnxbr ([Epic Leet Team](https://epicleet.team/))<br><ul><li>$10.00</li><li>via PayPal</li></ul> |
+ | <img src=../assets/profile/gnxbr.jpg width=100> | &emsp; | Álisson Bertochi &middot; gnxbr ([Epic Leet Team](https://epicleet.team/))<br><ul><li>$10.00</li><li>via PayPal</li></ul> |
 | <img src=../assets/profile/jidoc.jpg width=100> | &emsp; | Junghyun Kim ([Website](https://jidoc.me))<br><ul><li>$10.00</li><li>via PayPal</li></ul> |
 | <img src=../assets/profile/posix.jpg width=100> | &emsp; | Posix ([Twitter](https://twitter.com/po6ix))<br><ul><li>$10.00</li><li>via PayPal</li></ul> |
 | <img src=../assets/profile/isopach.jpg width=100> | &emsp; | Koh You Liang &middot; isopach ([Twitter](https://twitter.com/kohyouliang))<br><ul><li>$10.00</li><li>via PayPal</li></ul> |
