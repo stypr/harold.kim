@@ -49,35 +49,27 @@ export default {
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
       }
+    },
+    refreshContainer() {
+      this.jumpContainer();
+      let route = useRoute();
+      if(route.path){
+        if(route.path.startsWith("/blog/") && route.path !== '/blog/' && route.path !== '/blog/index.html'){
+          this.post_view = true;
+          this.loadDisqus();
+        }else{
+          this.post_view = false;
+        }
+      }else{
+        this.post_view = false;
+      }
     }
   },
   updated(){
-    this.jumpContainer();
-    let route = useRoute();
-    if(route.path){
-      if(route.path.startsWith("/blog/") && route.path !== '/blog/' && route.path !== '/blog/index.html'){
-        this.post_view = true;
-        this.loadDisqus();
-      }else{
-        this.post_view = false;
-      }
-    }else{
-      this.post_view = false;
-    }
+    this.refreshContainer();
   },
   mounted(){
-    this.jumpContainer();
-    let route = useRoute();
-    if(route.path){
-      if(route.path.startsWith("/blog/") && route.path !== '/blog/' && route.path !== '/blog/index.html'){
-        this.post_view = true;
-        this.loadDisqus();
-      }else{
-        this.post_view = false;
-      }
-    }else{
-      this.post_view = false;
-    }
+    this.refreshContainer();
   }
 };
 </script>
