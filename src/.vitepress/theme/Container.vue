@@ -65,5 +65,19 @@ export default {
       this.post_view = false;
     }
   },
+  mounted(){
+    this.jumpContainer();
+    let route = useRoute();
+    if(route.path){
+      if(route.path.startsWith("/blog/") && route.path !== '/blog/' && route.path !== '/blog/index.html'){
+        this.post_view = true;
+        this.loadDisqus();
+      }else{
+        this.post_view = false;
+      }
+    }else{
+      this.post_view = false;
+    }
+  }
 };
 </script>
