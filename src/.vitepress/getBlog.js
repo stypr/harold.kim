@@ -28,7 +28,7 @@ exports.getPosts = () => {
 exports.getGists = () => {
   // Todo..
   result = {}
-  gists = fs.readFileSync('src/public/gists.json');
-  result = JSON.parse(gists);
+  gists = fs.readFileSync('src/public/gists.json')
+  result = JSON.parse(gists)
   return result
 }

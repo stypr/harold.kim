@@ -4,6 +4,7 @@
 set -e
 
 # build
+curl -s https://api.github.com/users/stypr/gists > src/public/gists.json
 yarn build
 
 # setup env
