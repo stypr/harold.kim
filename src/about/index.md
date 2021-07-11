@@ -23,6 +23,7 @@ Interested in web exploitation, pentests and development.
 
 ### &#128030; Disclosed vulnerabilities
 
+* CVE-2021-29625
 * CVE-2021-20667
 * CVE-2021-20668
 * CVE-2021-20669

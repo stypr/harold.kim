@@ -22,7 +22,6 @@
     </li>
   </ul>
 </template>
-
 <script type="module">
 import { useSiteData } from 'vitepress'
 
@@ -37,7 +36,17 @@ export default {
   },
   mounted() {
     this.getPosts();
-    this.getGists();
+    // Dynamically load gists
+    // Return stored gists on error
+    fetch("https://api.github.com/users/stypr/gists")
+    .then((response) => response.json())
+    .then((response) => {
+      this.updateGists(response);
+    })
+    .catch((error) => {
+      console.log(error);
+      this.getGists();
+    });
   },
   methods: {
     getPosts() {

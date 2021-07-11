@@ -18,9 +18,10 @@ Please note that I may be a bit slow to respond.
 ## Gaming
 
 * <b>Nintendo Switch</b><br>SW-3494-7684-3795<br><br>
-* <b>SEGA Arcade (JP)</b><br>5069084813130<br><br>
+* <b>SEGA Arcades</b><br>5069084813130<br><br>
+* <b>プロセカ (Project Sekai: Colorful Stage)</b><br>6719346701660162<br><br>
 
-## Others
+## Social
 
 * <b>GitHub</b><br>[@stypr](https://github.com/stypr)<br><br>
 * <b>Twitter</b><br>[@stereotype32](https://twitter.com/stereotype32)<br><br>

@@ -16,7 +16,7 @@
       :position="{ y: 0, z: 100 }"
       :look-at="{ x: 0, y: 0, z: 0 }"
     />
-    <Scene background="#002000">
+    <Scene background="#001902">
       <SpotLight
         color="#00fc00"
         :intensity="0.3"
